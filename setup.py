@@ -14,7 +14,7 @@ def get_requirements(file_path:str)->List:
 
 
 setup(
-    name="ProjectName",
+    name="Daibetic Prediction",
     version='0.0.1',
     author="Durgesh Chandra Mishra",
     author_email="durgeshcmishra@gmail.com",
