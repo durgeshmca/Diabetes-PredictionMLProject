@@ -1,0 +1,19 @@
+#
+# Author: Lasse Collin
+#
+# This file has been put into the public domain.
+# You can do whatever you want with this file.
+#
+
+prefix=/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv
+exec_prefix=/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv
+libdir=/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv/lib
+includedir=/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv/include
+
+Name: liblzma
+Description: General purpose data compression library
+URL: https://tukaani.org/xz/
+Version: 5.4.2
+Cflags: -I${includedir}
+Libs: -L${libdir} -llzma
+Libs.private: -pthread -lpthread

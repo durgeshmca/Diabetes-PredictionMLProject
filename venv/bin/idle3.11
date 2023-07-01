@@ -1,0 +1,5 @@
+#!/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv/bin/python3.11
+
+from idlelib.pyshell import main
+if __name__ == '__main__':
+    main()

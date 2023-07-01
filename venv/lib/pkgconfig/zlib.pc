@@ -1,0 +1,13 @@
+prefix=/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv
+exec_prefix=/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv
+libdir=/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv/lib
+sharedlibdir=/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv/lib
+includedir=/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

@@ -1,0 +1,5 @@
+#!/official/official_docs/PythonLerning/LogisticRegressionPractice/DaibeticPridictionMLProject/venv/bin/python3.11
+
+import pydoc
+if __name__ == '__main__':
+    pydoc.cli()
