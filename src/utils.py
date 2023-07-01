@@ -5,6 +5,10 @@ import pickle
 from src.logger import logging
 from src.exception import CustomException
 from sklearn.metrics import mean_absolute_error,r2_score,mean_squared_error
+from sklearn.model_selection import GridSearchCV
+from sklearn.linear_model import LogisticRegression
+import warnings
+warnings.filterwarnings('ignore')
 
 ##
 # Saves objects into pickle file
@@ -63,3 +67,33 @@ def load_object(file_path):
     except Exception as e:
         logging.info(f'Exception occured during loading object at {file_path}')
         raise CustomException(e,sys)
+    
+
+    ###
+    # Hypertune variable for logical regression model
+    ##
+
+def  hypertune_model(X_train,y_train,X_test,y_test,regressor:LogisticRegression):
+     try :
+        logging.info(f"finding best parameters for logical regressor")
+        report = {}
+        parameters = {
+            'penalty':('l1', 'l2', 'elasticnet'),
+            'C':[-3,-2,-1,0,1,2,3],
+            'solver': ('lbfgs', 'liblinear', 'newton-cg', 'newton-cholesky', 'sag', 'sag')
+        }
+        regressor = LogisticRegression()
+        eval_model = GridSearchCV(regressor,parameters,cv=10,scoring='accuracy')
+        eval_model.fit(X_train,y_train)
+        report['best_parameters'] = eval_model.best_params_
+        report['best_score'] = eval_model.best_score_
+        logging.info(f"best parameters are :")
+        logging.info(report)
+        
+
+        return report
+         
+     except Exception as e:
+        logging.info('Exception occured during model training')
+        raise CustomException(e,sys)
+
